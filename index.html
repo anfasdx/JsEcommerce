@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecommerce Dexia</title>
+    <!--  Link to css  -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!--  Box Icons  -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <!-- nav -->
+      <div class="nav container">
+        <a href="#" class="logo">Dexia</a>
+        <!-- cart-icon  -->
+        <i class="bx bx-shopping-bag" id="cart-icon"></i>
+        <div class="cart">
+          <h2 class="section-title">Your Cart</h2>
+          <i class="bx bx-x" id="close-cart"></i>
+
+          <!-- Content  -->
+          <div class="cart-content"></div>
+          <!-- total -->
+          <div class="total">
+            <div class="total-title">Total</div>
+            <div class="total-price">$0</div>
+          </div>
+          <!-- Buy Button -->
+          <button type="button" class="btn-buy">Buy Now</button>
+          <!-- Cart Close -->
+        </div>
+      </div>
+    </header>
+
+    <!-- Poster -->
+    <section>
+      <div class="poster">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+      </div>
+      <script>
+        const myDiv = document.getElementById("myDiv");
+        const width = myDiv.offsetWidth;
+        const centerX = width / 2;
+
+        myDiv.addEventListener("mousemove", function (event) {
+          const mouseX = event.clientX;
+          const opacity = mouseX < centerX ? 0.4 : 0.1;
+          myDiv.style.opacity = opacity;
+        });
+      </script>
+      <script>
+        const images = [
+          // "https://images.unsplash.com/photo-1542466500-dccb2789cbbb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
+          // "https://images.unsplash.com/photo-1566150783851-51df62fd3d68?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1123&q=80",
+          // "https://images.unsplash.com/photo-1542681575-352258e0c854?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+          "./img/product2.jpg",
+          "./img/product1.jpg",
+          "./img/product3.jpg",
+          "./img/product4.jpg",
+          "./img/product5.jpg",
+          "./img/product6.jpg",
+          "./img/product7.jpg",
+          "./img/product8.jpg",
+        ];
+
+        let currentIndex = 0;
+
+        function changeImage() {
+          const one = document.querySelector(".one");
+          const two = document.querySelector(".two");
+          const three = document.querySelector(".three");
+
+          one.style.backgroundImage = `url(${images[currentIndex]})`;
+          two.style.backgroundImage = `url(${
+            images[(currentIndex + 1) % images.length]
+          })`;
+          three.style.backgroundImage = `url(${
+            images[(currentIndex + 2) % images.length]
+          })`;
+
+          currentIndex = (currentIndex + 1) % images.length;
+        }
+
+        setInterval(changeImage, 5000);
+      </script>
+    </section>
+    <div class="loaderbg"></div>
+    <div class="loader"></div>
+    <script defer>
+      window.addEventListener("load", function () {
+        var loader = document.querySelector(".loader");
+        var loaderbg = document.querySelector(".loaderbg");
+
+        // Show the loader
+        loader.style.display = "block";
+        loaderbg.style.display = "block";
+
+        // Call your function here
+        changeImage();
+
+        // Hide the loader once the function has completed
+        loader.style.display = "none";
+        loaderbg.style.display = "none";
+      });
+    </script>
+    <!-- shop  -->
+    <section class="shop container">
+      <h2 class="section-title">shop Products</h2>
+      <!-- Content  -->
+      <div class="shop-content">
+        <!-- Box 1  -->
+        <div class="product-box">
+          <img src="img/product1.jpg" alt="" class="product-img" />
+          <h2 class="product-title">AEROREADY SHIRT</h2>
+          <span class="price">$25</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 2  -->
+        <div class="product-box">
+          <img src="img/product2.jpg" alt="" class="product-img" />
+          <h2 class="product-title">WATER SHIRT</h2>
+          <span class="price">$90</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 4  -->
+        <div class="product-box">
+          <img src="img/product4.jpg" alt="" class="product-img" />
+          <h2 class="product-title">4 SHIRT</h2>
+          <span class="price">$35</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 5  -->
+        <div class="product-box">
+          <img src="img/product5.jpg" alt="" class="product-img" />
+          <h2 class="product-title">hs SHIRT</h2>
+          <span class="price">$35</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 6  -->
+        <div class="product-box">
+          <img src="img/product6.jpg" alt="" class="product-img" />
+          <h2 class="product-title">df SHIRT</h2>
+          <span class="price">$35</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 7  -->
+        <div class="product-box">
+          <img src="img/product7.jpg" alt="" class="product-img" />
+          <h2 class="product-title">dfd SHIRT</h2>
+          <span class="price">$35</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 8  -->
+        <div class="product-box">
+          <img src="img/product8.jpg" alt="" class="product-img" />
+          <h2 class="product-title">AEEADY SHIRT</h2>
+          <span class="price">$35</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+      </div>
+    </section>
+    <!-- Link To JS -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
