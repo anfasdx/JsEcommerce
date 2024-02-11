@@ -1,6 +1,10 @@
 /* Google fonts */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&family=Poppins:wght@400;500;600&display=swap");
 
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities */
+
 * {
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -171,20 +175,6 @@ header {
   z-index: 0;
 }
 
-/* @keyframes bgchange {
-  0% {
-    background-image: url("../img/product1.jpg");
-  }
-  40% {
-    background-image: url("../img/product2.jpg");
-  }
-  80% {
-    background-image: url("../img/product3.jpg");
-  }
-  100% {
-    background-image: url("../img/product1.jpg");
-  }
-} */
 
 .three {
   width: 14%;
@@ -325,41 +315,12 @@ header {
   gap: 1.5rem;
 }
 
-.product-box {
-  position: relative;
-  border: none;
-  padding: 15px;
-}
-
-.product-box:hover {
-  padding: 0px;
-  border: 0px solid var(--text-unique);
-  transition: 0.4s;
-}
-
-.product-img {
-  width: 100%;
-  margin: auto;
-  margin-bottom: 0.5rem;
-}
-
-.product-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-}
-
-.price {
-  font-weight: 500;
-}
-
 .add-cart {
   position: relative;
   bottom: 0;
-  left: 70%;
-  background: var(--text-color);
+  /* background: var(--text-color); */
   color: var(--bg-color);
+  color: black;
   padding: 10px;
   cursor: pointer;
 }

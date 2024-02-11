@@ -1,15 +1,29 @@
 // Cart
-let cartIcon = document.querySelector('#cart-icon');
-let cart = document.querySelector('.cart');
-let closeCart = document.querySelector('#close-cart');
-// openCart
-cartIcon.onclick = () => {
-    cart.classList.add('active');
-}
-// closeCart
-closeCart.onclick= () => {
+const cartIcon = document.querySelector('#cart-icon');
+const cart = document.querySelector('.cart');
+const closeCart = document.querySelector('#close-cart');
+
+function toggleActive(){
+  if(cart.classList.contains('active')){
     cart.classList.remove('active');
-}
+  } else {
+    cart.classList.add('active');
+  }
+};
+
+cartIcon.addEventListener('click', toggleActive);
+closeCart.addEventListener('click', toggleActive);
+// But old is better 
+
+// // openCart
+// cartIcon.onclick = () => {
+//     cart.classList.add('active');
+// }
+// // closeCart
+// closeCart.onclick= () => {
+//     cart.classList.remove('active');
+// }
+
 // cartWorking JS
 if (document.readyState == 'loading'){
     document.addEventListener('DOMContentLoaded', ready);
@@ -68,8 +82,6 @@ function buyButtonClicked() {
     updatetotal();
   }
    
-
-
  // Remove Items From Cart 
  function removeCartItem(event){
     var buttonClicked = event.target;
@@ -84,10 +96,10 @@ function quantityChanged(event){
     }
     updatetotal();
 }
-// Add TO Cart
+// Add To Cart
 function addCartClicked(event) {
     var button = event.target;
-    var shopProducts = button.parentElement;
+    var shopProducts = button.parentElement.parentElement.parentElement;
     var title = shopProducts.getElementsByClassName('product-title')[0].innerText;
     var price = shopProducts.getElementsByClassName('price')[0].innerText;
     var productImg = shopProducts.getElementsByClassName('product-img')[0].src;
