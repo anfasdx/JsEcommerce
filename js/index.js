@@ -4,7 +4,6 @@ const cartIcon = document.querySelector('.cart-icon');
 const cart = document.querySelector('.cart');
 const closeCart = document.querySelector('#close-cart');
 
-
 function toggleActive(){
   if(cart.classList.contains('active')){
     cart.classList.remove('active');
@@ -13,22 +12,8 @@ function toggleActive(){
   }
 };
 
-
 cartIcon.addEventListener('click', toggleActive);
 closeCart.addEventListener('click', toggleActive);
-
-// But old is better 
-
-// // openCart
-// cartIcon.onclick = () => {
-//     cart.classList.add('active');
-// }
-// // closeCart
-// closeCart.onclick= () => {
-//     cart.classList.remove('active');
-// }
-
-// cartWorking JS
 
 if (document.readyState == 'loading'){
     document.addEventListener('DOMContentLoaded', ready);
@@ -41,14 +26,14 @@ if (document.readyState == 'loading'){
 // makingFunction
 function ready() {
     // Remove Items From Cart
-    // var removeCartButtons = document.getElementsByClassName('remove-cart');
+    var removeCartButtons = document.getElementsByClassName('remove-cart');
     var i = 1;
     console.log(`\n ${i} `+"heet ");
-    // for (var i = 0; i < removeCartButtons.length;i++) {
-    //   console.log('\n '+i);
-    //   var button = removeCartButtons[i];
-    //     button.addEventListener('click', removeCartItem);
-    // }
+    for (var i = 0; i < removeCartButtons.length;i++) {
+      console.log('\n '+i);
+      var button = removeCartButtons[i];
+        button.addEventListener('click', removeCartItem);
+    }
     // Quantity Changes 
     var quantityInputs = document.getElementsByClassName('cart-quantity');
     for (var i = 0; i < quantityInputs.length;i++){
@@ -96,8 +81,6 @@ function buyButtonClicked() {
 function removeCartItem(event){
     var buttonClicked = event.target;
     buttonClicked.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.remove();
-    console.log();
-    // NearCart.getElementsByClassName('cartBox')[0].remove();
     console.log("Success!...");
     updatetotal();
 };
