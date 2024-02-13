@@ -359,6 +359,7 @@
 
     <!-- Link To JS -->
     <script>
+      // here we implement DataBase, Json Format to Access the Data 
       const products = [
         {
           img: "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
@@ -406,6 +407,7 @@
       productDropDown.addEventListener('click', toggleMenu.bind(null, productsDropContainer));
       productDropDownmb.addEventListener('click', toggleMenu.bind(null, productsDropContainermb));
 
+      // generate the products according to the contents in the map 
       products.map(product => {
 
         const productCard = document.createElement("div");
@@ -435,9 +437,12 @@
         productTitleContainer.appendChild(productTitle);
         const productColor = document.createElement("p");
         productColor.classList.add("mt-1", "text-sm", "text-gray-500");
-        productColor.textContent = "Black"; // Change this to product color if available
+        productColor.textContent = "Black"; 
         productTitleContainer.appendChild(productColor);
         productInfoContainer.appendChild(productTitleContainer);
+
+
+        // Here we Lerning the javaScript to Create Products accourding to dataSet 
 
         const productPriceContainer = document.createElement("div");
         const productPrice = document.createElement("p");
