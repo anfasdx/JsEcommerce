@@ -12,6 +12,7 @@
   <!--  Box Icons  -->
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 </head>
+
 <body>
   <!-- header -->
   <header class="bg-white">
@@ -22,18 +23,7 @@
           <span class="">BotiQue</span>
         </a>
       </div>
-      <div class="flex lg:hidden ">
-        <div>
-          <i class="bx bx-shopping-bag" id="cart-icon"></i>
-        </div>
-        &nbsp;
-        <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" id="menuBar">
-          <span class="sr-only">Open main menu</span>
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg>
-        </button>
-      </div>
+
       <div class="hidden lg:flex lg:gap-x-12">
         <div class="relative">
           <button type="button" class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900" aria-expanded="false" id="productDropDown">
@@ -147,17 +137,52 @@
         <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Marketplace</a>
         <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Company</a>
       </div>
-      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-        <i class="bx bx-shopping-bag" id="cart-icon"></i>
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">
-          <span aria-hidden="true">&rarr;</span></a>
+      <div class="flex items-center gap-3">
+      <div id="cart-icon" class="cart-icon lg:flex text-2xl lg:flex-1 lg:justify-end cursor-pointer">
+        <i class="bx bx-shopping-bag" ></i>
       </div>
+      <div class="flex lg:hidden ">
+        <!-- <div>
+          <i class="bx bx-shopping-bag cart-icon" id="cart-icon1 "></i>
+        </div> -->
+        <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" id="menuBar">
+          <span class="sr-only">Open main menu</span>
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+      </div>
+    </div>
       <div class="cart">
         <h2 class="section-title">Your Cart</h2>
         <i class="bx bx-x" id="close-cart"></i>
 
         <!-- Content  -->
-        <div class="cart-contents"></div>
+        <div class="w-full overflow-hidden overflow-y-auto h-auto"> 
+          <div class="cart-contents"></div>
+
+          <div class="w-90 rounded-lg bg-gray-100 px-10 py-10">
+            <h2 class="font-semi text-xl">Order Summary</h2>
+            <div class="flex justify-between mt-5 mb-3">
+              <p class="text-gray-500 text-sm">Subtotal:</p>
+              <p class="font-semi text-black">$32.00</p>
+            </div>
+            <div class="flex justify-between mt-3 mb-3">
+              <p class="text-gray-500 text-sm">Shipping estimate:</p>
+              <p class="font-semi text-black">$5.00</p>
+            </div>
+  
+            <div class="flex justify-between mt-3 mb-3">
+              <p class="text-gray-500 text-sm">Tax estimate:</p>
+              <p class="font-semi text-black">$8.32</p>
+            </div>
+            <div class="flex justify-between border-t pt-5">
+              <p class="font-semi text-base">Order total:</p>
+              <p class="font-semi text-black total-price">$0.00</p>
+            </div>
+            <button class="btn-buy bg-purple-600 hover:bg-purple-700 text-white font-medium text-sm w-full rounded-md p-2 mt-5">Checkout</button>
+          </div>
+        </div>
 
         <!-- <div class="flex flex-col md:flex-row md:gap-4">
           <div class="w-full bg-white px-5 py-3">
@@ -198,26 +223,7 @@
           </div>
         </div> -->
 
-        <div class="w-90 rounded-lg md:w-1/4 bg-gray-100 px-10 py-10">
-          <h2 class="font-semi text-xl">Order Summary</h2>
-          <div class="flex justify-between mt-5 mb-3">
-            <p class="text-gray-500 text-sm">Subtotal:</p>
-            <p class="font-semi text-black">$32.00</p>
-          </div>
-          <div class="flex justify-between mt-3 mb-3">
-            <p class="text-gray-500 text-sm">Shipping estimate:</p>
-            <p class="font-semi text-black">$5.00</p>
-          </div>
-          <div class="flex justify-between mt-3 mb-3">
-            <p class="text-gray-500 text-sm">Tax estimate:</p>
-            <p class="font-semi text-black">$8.32</p>
-          </div>
-          <div class="flex justify-between border-t pt-5">
-            <p class="font-semi text-base">Order total:</p>
-            <p class="font-semi text-black total-price">$0.00</p>
-          </div>
-          <button class="bg-purple-600 hover:bg-purple-700 text-white font-medium text-sm w-full rounded-md p-2 mt-5">Checkout</button>
-        </div>
+
         <!-- Content  -->
         <!-- total -->
 
@@ -356,23 +362,23 @@
       const products = [
         {
           img: "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
-          title: "Basic Tee",
-          price: "$35"
+          title: "B1asic Tee",
+          price: "$85"
           },
         {
           img: "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-02.jpg",
           title: "main Tee",
-          price: "$55"
+          price: "$35"
           },
         {
           img: "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-03.jpg",
-          title: "main Tee",
-          price: "$55"
+          title: "mai2n Tee",
+          price: "$09"
           },
         {
           img: "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-04.jpg",
-          title: "main Tee",
-          price: "$55"
+          title: "mai3n Tee",
+          price: "$108"
           },
           // Add more products here
       ];
@@ -438,7 +444,7 @@
         productPrice.classList.add("text-sm", "font-medium", "text-gray-900", "price");
         productPrice.textContent = product.price;
         const addToCartIcon = document.createElement("i");
-        addToCartIcon.classList.add("bx", "bx-shopping-bag", "add-cart");
+        addToCartIcon.classList.add("bx", "bx-shopping-bag", "add-cart","text-2xl");
         productPriceContainer.appendChild(productPrice);
         productPriceContainer.appendChild(addToCartIcon);
         productInfoContainer.appendChild(productPriceContainer);
